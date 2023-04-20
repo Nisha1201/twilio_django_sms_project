@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send_sms</title>
+</head>
+<body>
+    <!-- sms_form.html -->
+<form action="{% url 'send_sms' %}" method="POST">
+    {% csrf_token %}
+    <label for="to">To:</label>
+    <input type="tel" name="to" required>
+  
+    <label for="body">Message body:</label>
+    <textarea name="body" required></textarea>
+  
+    <button type="submit">Send SMS</button>
+  </form>
+  
+</body>
+</html>
